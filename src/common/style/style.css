@@ -77,10 +77,22 @@
   grid-template-rows: auto;
   justify-content: center;
 }
-.main .main__character-list {
+.main .main__characters-container {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+}
+.main .main__characters-container .main__characters-container__pagination {
+  display: grid;
+  grid-template-rows: 25px;
+  grid-template-columns: auto;
+  overflow-x: scroll;
+  justify-content: center;
+  align-items: center;
+}
+.main .main__characters-container .main__characters-container__pagination div {
+  grid-row: 1;
+  width: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */
