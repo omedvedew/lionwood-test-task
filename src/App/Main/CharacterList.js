@@ -32,7 +32,10 @@ const CharacterList = () => {
         )
     };
 
+    let paginationBtns = document.querySelectorAll('.m-c-p_btn');
+
     console.log(newCharacters);
+    console.log(paginationBtns);
 
     return (
         <div className="main__characters-container">
@@ -42,7 +45,7 @@ const CharacterList = () => {
             <div className="main__characters-container__pagination">
                 {
                     keys(newCharacters.pages).map((key) => (
-                        <div key={key}>{key}</div>
+                        <div className={`m-c-p_btn ${key}`} key={key}>{key}</div>
                     ))
                 }
             </div>
