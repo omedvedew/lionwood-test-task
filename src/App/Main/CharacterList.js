@@ -28,7 +28,7 @@ const CharacterList = () => {
     let paginationArr = [];
     for (let i = 1; i <= newCharacters.pagesCount; i++) {
         paginationArr.push(i);
-    }
+    };
 
     const handleApiPageNumber = (number) => {
         setNewCharacters((prevState) => ({
@@ -36,7 +36,11 @@ const CharacterList = () => {
             statusFilter: prevState.statusFilter,
             genderFilter: prevState.genderFilter,
         }));
-    }
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
 
     const handleCharacterIndex = (index) => {
         newCharacters.selectedCharacterIndex = index;
