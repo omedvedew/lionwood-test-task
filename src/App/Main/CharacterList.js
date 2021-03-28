@@ -5,12 +5,12 @@ import { keys } from 'lodash';
 const CharacterList = () => {
 
     const [newCharacters, setNewCharacters] = useState({
-        pageNumber: 1,
+        currentPageNumber: 1,
         addedCharacters: [],
     });
 
     newCharacters.areCharactersDownloaded !== true ? 
-    axios.get(`https://rickandmortyapi.com/api/character?page=${newCharacters.pageNumber}`)
+    axios.get(`https://rickandmortyapi.com/api/character?page=${newCharacters.currentPageNumber}`)
         .then(res => res.data)
         .then(data =>
             setNewCharacters((prevState) => ({
@@ -22,18 +22,14 @@ const CharacterList = () => {
         ) :
     console.log(newCharacters);
 
-
     let paginationArr = [];
     for (let i = 1; i <= newCharacters.pagesCount; i++) {
         paginationArr.push(i);
     }
-    console.log(paginationArr);
 
-
-    const handleApiPageNumber = (e) => {
-        setNewCharacters((prevState) => ({
-            ...prevState,
-            pageNumber: e.target.textcontent,
+    const handleApiPageNumber = (number) => {
+        setNewCharacters(() => ({
+            currentPageNumber: number,
         }))
     }
 
@@ -41,19 +37,20 @@ const CharacterList = () => {
         <div className="main__characters-container">
             <div className="main__characters-container__list">
                 {
+                    newCharacters.addedCharacters ? 
                     newCharacters.addedCharacters.map(({id, name}) => (
                         <div className="main__characters-container__list_item" key={id}>
                             <h2 className="m-c-l_item-name">{name}</h2>
                         </div>
-                    ))
+                    )) : <h2 className="main__characters-container__list_message"></h2>
                 }
             </div>
             <div className="main__characters-container__pagination">
                 {
                     paginationArr.length > 0 ?
                     paginationArr.map(i => (
-                        <div className="m-c-p_item" key={i} onClick={handleApiPageNumber}>{i}</div>
-                    )) : console.log("waiting for api response")
+                        <div className="m-c-p_item" key={i} onClick={() => handleApiPageNumber(i)}>{i}</div>
+                    )) : <h2 className="main__characters-container__pagination_message"></h2>
                 }
             </div>
         </div>
