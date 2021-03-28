@@ -252,6 +252,7 @@
 }
 .main .main__new-character-form .main__new-character-form__input-box .m-n-i_title {
   margin-bottom: 10px;
+  text-align: center;
 }
 .main .main__new-character-form .main__new-character-form__input-box .m-n-i_input {
   color: #333333;
