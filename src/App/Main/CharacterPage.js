@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CharacterListPage = ({
+const CharacterPage = ({
     id,
 }) => {
     return (
@@ -10,4 +10,4 @@ const CharacterListPage = ({
     )
 };
 
-export default CharacterListPage;
+export default CharacterPage;
