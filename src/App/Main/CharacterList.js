@@ -8,10 +8,12 @@ const CharacterList = () => {
     const [newCharacters, setNewCharacters] = useState({
         currentPageNumber: 1,
         addedCharacters: [],
+        statusFilter: '',
+        genderFilter: '',
     });
 
     newCharacters.areCharactersDownloaded !== true ? 
-    axios.get(`https://rickandmortyapi.com/api/character?page=${newCharacters.currentPageNumber}`)
+    axios.get(`https://rickandmortyapi.com/api/character?page=${newCharacters.currentPageNumber}&status=${newCharacters.statusFilter}&gender=${newCharacters.genderFilter}`)
         .then(res => res.data)
         .then(data =>
             setNewCharacters((prevState) => ({
@@ -29,8 +31,10 @@ const CharacterList = () => {
     }
 
     const handleApiPageNumber = (number) => {
-        setNewCharacters(() => ({
+        setNewCharacters((prevState) => ({
             currentPageNumber: number,
+            statusFilter: prevState.statusFilter,
+            genderFilter: prevState.genderFilter,
         }));
     }
 
@@ -39,11 +43,47 @@ const CharacterList = () => {
         console.log(newCharacters.selectedCharacterIndex);
     };
 
+    const handleStatusFilter = (e) => {
+        setNewCharacters((prevState) => ({
+            statusFilter: e.target.value,
+            currentPageNumber: prevState.currentPageNumber || 1,
+            genderFilter: prevState.genderFilter,
+        }));
+    };
+
+    const handleGenderFilter = (e) => {
+        setNewCharacters((prevState) => ({
+            genderFilter: e.target.value,
+            currentPageNumber: prevState.currentPageNumber || 1,
+            statusFilter: prevState.statusFilter,
+        }))
+    };
+
     return (
         <div className="main__characters-container">
             <Route path="/" exact render={() => {
                 return (
                     <>
+                        <div className="main__filters-container">
+                            <div className="main__filters-container__filter status-filter">
+                                <h2 className="main__filters-container__filter_title">Filter by status:</h2>
+                                <select className="main__filters-container__filter_input status-filter-input" defaultValue={newCharacters.statusFilter} onChange={handleStatusFilter}>
+                                    <option value="">All</option>
+                                    <option value="alive">Alive</option>
+                                    <option value="dead">Dead</option>
+                                </select>
+                            </div>
+                            <div className="main__filters-container__filter gender-filter">
+                                <h2 className="main__filters-container__filter_title">Filter by gender:</h2>
+                                <select className="main__filters-container__filter_input gender-filter-input" defaultValue={newCharacters.genderFilter} onChange={handleGenderFilter}>
+                                    <option value="">All</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="genderless">Genderless</option>
+                                    <option value="unknown">Unknown</option>
+                                </select>
+                            </div>
+                        </div>
                         <h3 className="main__characters-container__page-number">Page {newCharacters.currentPageNumber}</h3>
                         <div className="main__characters-container__list">
                             {
