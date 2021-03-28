@@ -14,7 +14,7 @@
   justify-content: space-evenly;
   font-size: 18px;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   position: sticky;
   top: 0;
   left: 0;
@@ -149,6 +149,55 @@
 .main .main__characters-container .main__characters-container__pagination .m-c-p_item-active {
   border: 1px solid #ff9800;
   border-radius: 0.3rem;
+}
+.main .main__characters-container .main__characters-container__list_character {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: start;
+  align-items: flex-start;
+  background-color: #3c3e44;
+  margin: 25px 0;
+  border-radius: 1rem;
+  color: #f5f5f5;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_image {
+  display: grid;
+  max-width: 100%;
+  height: 100%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding: 15px;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .m-c-l_character_description_item {
+  margin: 5px 0;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .status-and-species {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .status-and-species :last-child {
+  margin-left: 10px;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .description_name {
+  font-size: 27px;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .description_episodes {
+  display: grid;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .description_episodes div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .description_episodes li {
+  margin-left: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

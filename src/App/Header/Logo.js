@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Logo = () => {
+const Logo = ({
+    scrollUp,
+}) => {
     return (
-        <Link to ="/" className="header__logo" style={{backgroundImage: 'url(/images/lionwood-logo-dark.png)'}}></Link>
+        <Link to ="/" className="header__logo" onClick={scrollUp} style={{backgroundImage: 'url(/images/lionwood-logo-dark.png)'}}></Link>
     )
 };
 
