@@ -46,7 +46,7 @@ const CharacterList = () => {
     const handleStatusFilter = (e) => {
         setNewCharacters((prevState) => ({
             statusFilter: e.target.value,
-            currentPageNumber: prevState.currentPageNumber || 1,
+            currentPageNumber: 1 || prevState.currentPageNumber,
             genderFilter: prevState.genderFilter,
         }));
     };
@@ -54,7 +54,7 @@ const CharacterList = () => {
     const handleGenderFilter = (e) => {
         setNewCharacters((prevState) => ({
             genderFilter: e.target.value,
-            currentPageNumber: prevState.currentPageNumber || 1,
+            currentPageNumber: 1 || prevState.currentPageNumber,
             statusFilter: prevState.statusFilter,
         }))
     };
