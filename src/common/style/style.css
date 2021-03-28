@@ -234,5 +234,54 @@
 .main .main__characters-container .main__characters-container__list_character .m-c-l_character_description .description_episodes li {
   margin-left: 20px;
 }
+.main .main__new-character-form {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  justify-items: center;
+  margin: 50px 0;
+  color: #333333;
+}
+.main .main__new-character-form .main__new-character-form_title {
+  margin-bottom: 25px;
+}
+.main .main__new-character-form .main__new-character-form__input-box {
+  display: grid;
+  margin-bottom: 25px;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_title {
+  margin-bottom: 10px;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_input {
+  color: #333333;
+  background-color: transparent;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_input:hover {
+  border-color: #ff9800;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_input:focus {
+  background-color: rgba(152, 255, 0, 0.2);
+  outline: none;
+  transition: all 0.3s;
+  border-color: #ff9800;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_radio-box {
+  color: #333333;
+  transition: all 0.3s;
+  margin: 5px 0;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_radio-box label {
+  margin-left: 5px;
+}
+.main .main__new-character-form .main__new-character-form__input-box .m-n-i_radio-box label:hover {
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=style.css.map */
