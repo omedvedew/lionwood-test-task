@@ -283,5 +283,29 @@
 .main .main__new-character-form .main__new-character-form__input-box .m-n-i_radio-box label:hover {
   cursor: pointer;
 }
+.main .main__new-character-form .main__new-character-form_submit-btn {
+  display: grid;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #ff9800;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333333;
+  transition: all 0.3s;
+}
+.main .main__new-character-form .main__new-character-form_submit-btn:hover {
+  background-color: #ff9800;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+.main .main__new-character-form .main__new-character-form_submit-btn:focus {
+  outline: none;
+  transition: all 0.3s;
+  transform: scale(0);
+}
 
 /*# sourceMappingURL=style.css.map */

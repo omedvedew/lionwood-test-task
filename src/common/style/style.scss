@@ -309,5 +309,30 @@
                 }
             }
         }
+
+        .main__new-character-form_submit-btn {
+            display: grid;
+            width: fit-content;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            border: 1px solid rgb(255, 152, 0);
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 18px;
+            color: rgb(51, 51, 51);
+            transition: all 0.3s;
+        }
+        .main__new-character-form_submit-btn:hover {
+            background-color: rgb(255, 152, 0);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            transform: scale(1.1);
+        }
+        .main__new-character-form_submit-btn:focus {
+            outline: none;
+            transition: all 0.3s;
+            transform: scale(0);
+        }
     }
 }

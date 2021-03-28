@@ -40,7 +40,7 @@ const NewCharacterPage = () => {
                     <h3 className="m-n-i_title">Character's image url</h3>
                     <input className="m-n-i_input" type="text" placeholder="Enter character's image url"/>
                 </div>
-                <button className="main__new-character-from_submit-btn">Submit</button>
+                <button className="main__new-character-form_submit-btn">Submit</button>
             </form>
         </>
     )
