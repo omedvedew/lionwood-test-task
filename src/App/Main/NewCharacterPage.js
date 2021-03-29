@@ -1,10 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const NewCharacterPage = () => {
+const NewCharacterPage = ({
+    newCharacterState,
+}) => {
+    console.log(newCharacterState);
+
     return (
         <>
             <form className="main__new-character-form">
-                <h2 className="main__new-character-form_title">Create new character here</h2>
+                <h2 className="main__new-character-form_title" >Create new character here</h2>
                 <div className="main__new-character-form__input-box">
                     <h3 className="m-n-i_title">Character's name</h3>
                     <input className="m-n-i_input" type="text" placeholder="Enter character's name"/>
@@ -46,4 +51,8 @@ const NewCharacterPage = () => {
     )
 };
 
-export default NewCharacterPage;
+const mapStateToProps = (state) => ({
+    newCharacterState: state,
+})
+
+export default connect(mapStateToProps)(NewCharacterPage);
