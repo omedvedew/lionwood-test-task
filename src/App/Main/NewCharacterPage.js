@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import NewCharacterPageItem from './NewCharacterPageItem';
 
 const NewCharacterPage = ({
     newCharacterState,
@@ -87,6 +88,22 @@ const NewCharacterPage = ({
                 </div>
                 <button className="main__new-character-form_submit-btn" onClick={() => addCharacterItem(characterObject.characterName, characterObject.characterEmail, characterObject.characterGender, characterObject.characterImage)}>Submit</button>
             </form>
+
+            {
+                newCharacterState[Object.keys(newCharacterState)] ?
+                // console.log()
+                newCharacterState[Object.keys(newCharacterState)].map(({charName, charEmail, charGender, charImage}, i) => (
+                    <div className="main__new-character" key={i}>
+                        <NewCharacterPageItem
+                            name={charName}
+                            email={charEmail}
+                            gender={charGender}
+                            image={charImage}
+                        />
+                    </div>
+                )) 
+                : console.log("waiting for character item")
+            }
         </>
     )
 };
