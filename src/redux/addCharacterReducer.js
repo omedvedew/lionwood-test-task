@@ -1,15 +1,20 @@
 
-export const addCharacterReducer = (state= {
-    1: 'qwerty',
-    2: 'asdfg',
-}, action) => {
+export const addCharacterReducer = (state= {}, action) => {
     switch (action.type) {
-        case "ADD_SOME_INFO":
+        case "ADD_CHAR_ITEM":
             return {
                 ...state,
-                [action.firstValue]: action.secondValue,
+                charName: action.value1,
+                charEmail: action.value2,
+                charGender: action.value3,
+                charImage: action.value4,
             }
-    
+
+        case "RESET_CHAR_STATE":
+            return {
+                [action.value]:[{...state}],
+            }
+
         default:
             return state;
     }
