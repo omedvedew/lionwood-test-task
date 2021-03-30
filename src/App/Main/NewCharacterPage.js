@@ -14,7 +14,12 @@ const NewCharacterPage = ({
         e.preventDefault();
     };
 
-    const [characterObject, setCharacterObject] = useState({});
+    const [characterObject, setCharacterObject] = useState({
+        characterName: 'no name',
+        characterEmail: 'no email',
+        characterGender: 'undefined',
+        characterImage: 'https://rickandmortyapi.com/api/character/avatar/19.jpeg',
+    });
 
     const handleCharacterName = (e) => {
         setCharacterObject((prevState) => ({
